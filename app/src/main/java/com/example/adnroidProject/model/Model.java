@@ -51,7 +51,7 @@ public class Model {
     }
 
 
-    public void getAllUsers(Model.Listener<List<User>> callback) {
+    public ArrayList<User> getAllUsers(Model.Listener<List<User>> callback) {
       ArrayList<User> userslist =  new ArrayList<>();
         firebaseModel.getAllUsers(list->{
             executor.execute(()->{
@@ -66,11 +66,12 @@ public class Model {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                // update local last update
+               callback.onComplete(userslist);
 
             });
         });
-        callback.onComplete(userslist);
+
+        return userslist;
     }
 
 

@@ -29,13 +29,13 @@ public class SecondFragment extends Fragment {
     private Executor executor = Executors.newSingleThreadExecutor();
 
     private FragmentSecondBinding binding;
+    ArrayList<User> users;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
@@ -43,31 +43,52 @@ public class SecondFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        users= new ArrayList<>();
+        Model.instance().getAllUsers(list->{
+            users.addAll(list);
+        });
          binding.button2.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-              boolean valid = true;
-              boolean finishCall =  false;
+                 boolean valid = true;
               String username= binding.editTextTextPersonName2.getText().toString();
               if (username.length()<8)
               {
-                  binding.textView2.setText("need  longer username");
+                  binding.textView2.setText("need longer username");
+
                return;
               }
+
               String passWord =  binding.editTextTextPersonName3.getText().toString();
               if (passWord.length()<8){
-                  binding.textView2.setText("need  longer password");
+                  binding.textView2.setText("need longer password");
                  return;
               }
+
+                  users.forEach(user -> {
+                     Log.d(TAG, "input username: "+username);
+                     Log.d(TAG, "user username: "+user.userName);
+                     if (user.userName.equals(username) ||user.passWord.equals(passWord)){
+                         binding.textView2.setText("UserName/Password exists");
+                     }
+                 });
                  String name =  binding.editTextTextPersonName4.getText().toString();
-                if (name.length()==0){
-                    binding.textView2.setText("name input is empty");
-                    return;
-                }
+                 if (!binding.textView2.getText().equals("UserName/Password exists")){
+                     if (name.length()==0){
+                         binding.textView2.setText("name input is empty");
+                         return;
+                     }
+                 }else {
+                      valid =  false;
+                 }
 
 
 
-                    addUser(view, username, passWord, name);
+                 if (valid==true){
+                     addUser(view, username, passWord, name);
+                 }
+
 
              }
          });
