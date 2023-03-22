@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pi"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.adnroidProject.AboutFragment">
+
+    <Button
+        android:id="@+id/pugImage"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="35dp"
+        android:text="Pug "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/dogimageView"
+        android:layout_width="473dp"
+        android:layout_height="269dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="160dp"
+        android:src="@drawable/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pitbullImage" />
+
+    <Button
+        android:id="@+id/rottweilerImage"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="36dp"
+        android:background="@android:color/holo_red_light"
+        android:text="rottweiler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toEndOf="@+id/pugImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/pitbullImage"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="8dp"
+        android:text="pitbull "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pugImage" />
+
+    <Button
+        android:id="@+id/huskyImage"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:background="@color/black"
+        android:text="Husky "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/pitbullImage"
+        app:layout_constraintTop_toBottomOf="@+id/rottweilerImage" />
+
+    <ProgressBar
+        android:id="@+id/progressBarAPI"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492" />
+
+    <Button
+        android:id="@+id/boxerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="8dp"
+        android:height="40dp"
+        android:text="Boxer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pitbullImage"
+        tools:layout_width="140dp" />
+
+    <Button
+        android:id="@+id/dalmatianButton"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:text="Dalmatian"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/huskyImage" />
+
+    <Button
+        android:id="@+id/malteseButton"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="8dp"
+        android:text="Maltese"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boxerButton" />
+
+    <Button
+        android:id="@+id/vizslaButton"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:text="Vizsla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dalmatianButton" />
+
+    <Button
+        android:id="@+id/labradorButton"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="8dp"
+        android:text="Labrador"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/malteseButton" />
+
+    <Button
+        android:id="@+id/dingoButton"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:text="Dingo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vizslaButton" />
+
+    <FrameLayout
+        android:layout_width="413dp"
+        android:layout_height="282dp"
+        android:background="#6E80DA">
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
